@@ -1,0 +1,205 @@
+.team-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #170d2a, #191b38); /* Space-like gradient */
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 20px;
+  text-align: center;
+  gap: 10%;
+}
+
+.team-image-wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: all ease-in 0.5s;
+}
+
+.team-image:hover {
+  cursor: grab;
+  transform: scale(1.1);
+}
+
+.team-content {
+  max-width: 600px;
+  text-align: start;
+  padding: 0 20px;
+}
+
+.team-title {
+  font-size: 2rem;
+  color: red;
+  font-weight: bold;
+}
+
+.team-subtitle {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: start;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.section-text {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.team-circles {
+  position: absolute;
+  left: 0;
+  top: -70%;
+  width: 50%;
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards 1.2s;
+  transform: rotate(-180deg);
+}
+
+.car {
+  position: absolute;
+  left: 17%;
+  transform: rotateZ(-21deg);
+  top: 0;
+  animation: spaceFlight 4s ease-in-out infinite;
+}
+
+@keyframes spaceFlight {
+  0% {
+    transform: rotateZ(-26deg) translateY(0);
+  }
+  50% {
+    transform: rotateZ(-27deg) translateY(25px);
+  }
+  100% {
+    transform: rotateZ(-26deg) translateY(0);
+  }
+}
+
+/* Fade-in and fade-out animations */
+.fade-in {
+  animation: fadeInside 1.5s ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOutside 1.5s ease-out forwards;
+}
+
+@keyframes fadeInside {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutside {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.team-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+}
+
+.team-icon {
+  font-size: 1.8rem;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.team-icon.github {
+  background-color: #333;
+}
+
+.team-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.team-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.download-cv-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-cv-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.download-cv-btn:active {
+  background-color: #1e7e34;
+  transform: scale(0.95);
+}
+
+
+@media (max-width: 480px) {
+  .car{
+    display: none;
+  }
+}
+
+@media (max-width: 786px) {
+  .car{
+    display: none;
+  }
+}
+@media (max-width: 1014px) {
+  .car{
+    display: none;
+  }
+}

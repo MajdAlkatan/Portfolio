@@ -1,0 +1,252 @@
+/* General Styles */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #170d2a, #191b38); /* Space-like gradient */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  padding: 0 20px;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1.5s ease-in-out forwards 0.5s;
+  margin-left: 35%;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff2d2d;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #ff8c8c;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Hero Elements Animations */
+.hero-earth {
+  position: absolute;
+  left: -10%;
+  bottom: 3%;
+  width: 550px;
+  opacity: 0;
+  animation: slideIn 1.5s ease-out forwards 0.8s;
+}
+
+.hero-astronaut {
+  position: absolute;
+  left: 10%;
+  top: 35%;
+  width: 380px;
+  transform: rotate(-5deg);
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards 1s;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Hover effect to scale and make it loop */
+.hero-astronaut:hover {
+  scale: calc(1.1);
+}
+
+.hero-circles {
+  position: absolute;
+  right: 0%;
+  top: -70%;
+  width: 50%;
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards 1.2s;
+}
+
+/* Animated Lines */
+.hero-lines {
+  position: absolute;
+  left: 0%;
+  top: 37%;
+  width: 380px;
+  height: auto;
+  background: url(/src/assets/lines1.png) no-repeat;
+  background-size: cover;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards 1.4s;
+}
+.hero-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #ff2d2d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.hero-button:last-child {
+  margin-left: 1.5%;
+  background-color: #ffffff;
+  color: #090917;
+  border: 1px solid #bf1a1a;
+}
+
+.hero-button:hover {
+  background-color: #ff5e5e;
+  transform: scale(1.05);
+}
+
+/* Enhanced Responsive Design */
+
+@media (max-width: 768px) {
+  .hero-content {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+  }
+
+  .hero-earth {
+    display: none;
+  }
+
+  .hero-astronaut {
+    display: none;
+  }
+
+  .hero-circles {
+    display: none;
+  }
+
+  .hero-lines {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-earth {
+    display: none;
+  }
+
+  .hero-astronaut {
+    display: none;
+  }
+
+  .hero-circles {
+    display: none;
+  }
+
+  .hero-lines {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+  }
+
+  .hero-earth {
+    display: none;
+  }
+
+  .hero-astronaut {
+    display: none;
+  }
+
+  .hero-circles {
+    display: none;
+  }
+
+  .hero-lines {
+    display: none;
+  }
+}

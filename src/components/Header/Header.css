@@ -1,0 +1,155 @@
+/* src/components/Header.css */
+
+/* Background and layout */
+.header {
+    background: linear-gradient(135deg, #0d1b2a, #1f2a44); /* Space-like gradient */
+    color: #fff;
+    padding: 6px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+/* Basic style for the team name */
+.team-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: transparent; /* Make the text transparent so the gradient shows through */
+    background: linear-gradient(90deg, #c5b9ff, #ffeacc, #befff2, #b1d8ff); /* Gradient background */
+    background-size: 200% auto; /* Create a wide background to animate */
+    background-clip: text; /* Clip the gradient to the text */
+    -webkit-background-clip: text; /* For Safari */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+  }
+  
+  /* Keyframes animation for multi-color effect */
+  @keyframes gradientShift {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  /* Hover effect with animation */
+  .team-name:hover {
+    animation: gradientShift 3s linear infinite; /* Move the gradient on hover */
+    transform: scale(1.1); /* Slight scale effect */
+  }
+  
+   
+
+/* Add a starry background effect */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/space.png') repeat;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Navigation bar container */
+.navLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* List items with space theme */
+.navList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+/* Button styling with space-themed hover effects */
+.button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+/* Glowing effect on hover */
+.button:hover {
+    color: #1c80e5; /* Light blue glow effect */
+    transform: scale(1.1);
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #1c80e5;
+    transition: width 0.3s;
+}
+
+.button:hover::after {
+    width: 100%;
+}
+
+/* Content styling (sections below header) */
+.content {
+    padding: 40px;
+    background-color: #111;
+    color: #fff;
+    min-height: 200px;
+    text-align: center;
+}
+/* Add new style for the Get In Touch button */
+.get-in-touch {
+    background-color: #1c80e5; /* Bright blue background */
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+/* Hover effect for the Get In Touch button */
+.get-in-touch:hover {
+    background-color: #0a4c7e; /* Darker blue */
+    transform: scale(1.1);
+}
+
+/* Additional styling for responsive behavior */
+@media (max-width: 768px) {
+    .navLinks {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navList {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        font-size: 16px;
+    }
+}

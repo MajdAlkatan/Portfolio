@@ -1,0 +1,151 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background: linear-gradient(135deg, #191b38, #170d2a); /* Space-like gradient */
+  color: white;
+}
+
+.about-img {
+  position: relative;
+  width: 50%;
+  top: 54px;
+}
+
+.about-plant {
+  width: 50%;
+}
+
+.about-content {
+  min-width: 60%;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.about-subtitle {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.about-skills {
+  list-style: none;
+  padding: 0;
+  display: flex; /* Make list & image inline */
+  align-items: center;
+}
+
+.about-skills img {
+  margin-left: 20px; /* Push image away from list */
+  width: 80px; /* Adjust size as needed */
+}
+
+.about-skills ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-skills li {
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+/* Planet Sprite Handling */
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background: url("../../assets/plant.png") no-repeat;
+  background-size: 100% auto;
+  margin-right: 10px;
+}
+
+.aboutli {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+  gap: 65px; /* Add space between items */
+}
+
+.aboutli li {
+  flex: 1 1 calc(50% - 10px); /* Each item takes up 50% of the width minus the gap */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .about-section {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .about-img,
+  .about-plant {
+    width: 100%; /* Full width on medium screens */
+    display: block; /* Ensure they are displayed */
+  }
+
+  .about-content {
+    min-width: auto; /* Reset min-width for smaller screens */
+    text-align: center; /* Center content */
+  }
+
+  .about-title,
+  .about-subtitle,
+  .about-skills ul {
+    margin: 0 auto; /* Center the title, subtitle, and list */
+    display: block; /* Ensure they are block elements for centering */
+  }
+
+  .aboutli {
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+
+  .aboutli li {
+    flex: 1 1 calc(50% - 10px); /* Each item takes up 50% of the width minus the gap */
+  }
+
+  .about-skills {
+    justify-content: center; 
+  }
+}
+
+@media (max-width: 768px) {
+  .about-img,
+  .about-plant {
+    display: none; /* Hide images on small screens */
+  }
+
+  .about-content {
+    text-align: center; /* Center content */
+  }
+
+  .about-title,
+  .about-subtitle,
+  .about-skills ul {
+    margin: 0 auto; /* Center the title, subtitle, and list */
+    display: block; /* Ensure they are block elements for centering */
+  }
+
+  .aboutli {
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+
+  .aboutli li {
+    flex: 1 1 100%; /* Each item takes full width on small screens */
+  }
+
+  .about-skills {
+    justify-content: center; 
+  }
+}
+@media (max-width:1014px){
+  .about-img,.about-plant{
+    display: none;
+  }
+}
